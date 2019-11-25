@@ -28,36 +28,56 @@ function showTime(){  // for showing time in Alarm Class //
 
 showTime();
 
-function DisplayOptions(){ 									  //When clicking The Add Alarm button
-let input = document.createElement("input");                 // Create a <input> element
-input.innerHTML = "";             
-document.getElementById("Options").appendChild(input);
-input.setAttribute("type", "text");
-input.setAttribute("list", "input-field")
+function DisplayOptions() { 
+//When clicking The Add Alarm button for Pre-determined options
 
-//Create Datalist
-let Datalist = document.createElement("Datalist");
-Datalist.innerHTML = "";
-document.getElementById("Options").appendChild(Datalist);
-Datalist.setAttribute("id", "input-field")
+let button1 = document.createElement("button");                 // Create <button>(s) element 
+button1.innerHTML = "1hr";             
+document.getElementById("Options").appendChild(button1);
+
+let button2 = document.createElement("button");                  
+button2.innerHTML = "20min";             
+document.getElementById("Options").appendChild(button2);
+
+let button3 = document.createElement("button");                  
+button3.innerHTML = "5min";             
+document.getElementById("Options").appendChild(button3); 
+
+//for customizable time options area on the page
+
+let input = document.createElement("input");
+input.innerHTML="";
+document.getElementById("Options").appendChild(input);
+input.setAttribute("type", "number");
+
+//for choosing time unit of chosen time put into input field 
+
+let input1 = document.createElement("input");
+input1.innerHTML = "";
+input1.setAttribute("list", "unit-list");
+document.getElementById("Options").appendChild(input1);
+
+let database = document.createElement("datalist");  
+database.innerHTML = "";
+database.setAttribute("id", "unit-list");
+document.getElementById("Options").appendChild(database);
+let unit1 = document.createElement("option");
+unit1.innerHTML = "";
+unit1.setAttribute("value", "hours");
+document.getElementById("unit-list").appendChild(unit1);
+let unit2 = document.createElement("option");
+unit2.innerHTML = "";
+unit2.setAttribute("value", "minutes");
+document.getElementById("unit-list").appendChild(unit2);
+let unit3 = document.createElement("option");
+unit3.innerHTML = "";
+unit3.setAttribute("value", "seconds");
+document.getElementById("unit-list").appendChild(unit3);
+
+
+let submit = document.createElement("button");					//for submitting typed time with its unit
+submit.innerHTML = "submit";
+document.getElementById("Options").appendChild(submit);
 
 //Creates options for time until ringing
-
-let label1= document.createElement("option");
-label1.innerHTML = "";
-document.getElementById("input").appendChild(label1);
-label1.setAttribute("value", "1hr")
-
-let label2= document.createElement("option");
-label2.innerHTML = "";
-document.getElementById("input").appendChild(label2);
-label2.setAttribute("value", "20min")
-
-let label3= document.createElement("option");
-label3.innerHTML = "";
-document.getElementById("input").appendChild(label3);
-label3.setAttribute("value", "5min")
-
-
-
 }
